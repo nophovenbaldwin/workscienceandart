@@ -1,26 +1,17 @@
 <html lang="en">
 
 <head>
-  <title>🌤️</title>
-  <link rel="stylesheet" href="allsky.css">
+  <title>🕊️</title>
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>  
-  <a><img src="ALLSKY_LOGO.png" class="center" width="225px" height="291"></a>
+  <a><img src="WS_LOGO.png" class="center" width="225px" height="291"></a>
     <br>
-      AS 01 - <a href="AS01.html"><i>Noah Ophoven-Baldwin</i></a>
-      <br>
-      AS 02 - <a href="AS02.html"><i>Luke Martin</i></a>
-      <br>
-      AS 03 - <a href="AS03.html"><i>Lyn Corelle & Zhu Wenbo</i></a>
-      <br>
-      AS 04 - Pablo Picco
-      <br>
-      AS 05 - Adam Zahller
+      UNDER CONSTRUCTION
   <br>
   <br>
-  <i><a link href="ASinfo.html">contact</a> • <a link href="https://allsky.bandcamp.com/">bandcamp</a> • <a link href="https://archive.org/details/@allsky">archive</a></i>
+  <i><a link href="contact.html">contact</a>
   </p>
-  <a href="index.html">↵</a>
 </body>
 
 </html>
