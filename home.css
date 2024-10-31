@@ -1,0 +1,29 @@
+body {
+  background-color: lightskyblue;
+;
+  font-family: "Georgia", serif;
+}
+/* unvisited link */
+a:link {
+  color: black;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+}
+
+/* mouse over link */
+a:hover {
+  color: background-color: white;
+;
+}
+
+/* selected link */
+a:active {
+  color: white;
+}
+
+<!--
+ .tab { margin-left: 40px; }
+-->
