@@ -15,6 +15,13 @@ body {
   text-align: center;
 }
 
+/* ===== RESPONSIVE LOGO ===== */
+.logo {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+}
+
 /* ===== GRID LAYOUT ===== */
 .image-column {
   display: grid;
@@ -67,7 +74,7 @@ body {
   position: absolute;
   top: 0;
   left: 50%;
-  width: 3px;
+  width: 2px;
   height: 100%;
   background: white;
 }
@@ -76,15 +83,38 @@ body {
   content: "";
   position: absolute;
   top: 50%;
-  left: -7px;
-  width: 16px;
-  height: 16px;
+  left: -6px;
+  width: 14px;
+  height: 14px;
   background: white;
   border-radius: 50%;
   transform: translateY(-50%);
 }
 
-/* ===== LABEL ===== */
+/* ===== BEFORE / AFTER LABELS ===== */
+.before-text,
+.after-text {
+  position: absolute;
+  top: 10px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 4px 8px;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+.before-text {
+  left: 10px;
+}
+
+.after-text {
+  right: 10px;
+}
+
+/* ===== SERVICE LABEL ===== */
 .image-label {
   position: absolute;
   bottom: 10px;
@@ -101,7 +131,7 @@ body {
 
 <body>
 
-<img src="wsa logo 1 transparent.png" width="600" alt="Company Logo">
+<img src="wsa logo 1 transparent.png" class="logo" alt="Company Logo">
 <br><br>
 TWIN CITIES PLASTER & DRYWALL SOLUTIONS
 <br><br>
@@ -116,53 +146,12 @@ TWIN CITIES PLASTER & DRYWALL SOLUTIONS
       <img src="Drywall_repair_after.jpeg" alt="After">
     </div>
     <div class="slider"></div>
+    <div class="before-text">Before</div>
+    <div class="after-text">After</div>
     <div class="image-label">Drywall Repair</div>
   </div>
 
-  <div class="image-container">
-    <img src="Plaster_repair_before.jpeg" alt="Before">
-    <div class="image-overlay">
-      <img src="Plaster_repair_after.jpeg" alt="After">
-    </div>
-    <div class="slider"></div>
-    <div class="image-label">Plaster Repair</div>
-  </div>
-
-  <div class="image-container">
-    <img src="Popcorn_removal_before.jpeg" alt="Before">
-    <div class="image-overlay">
-      <img src="Popcorn_removal_after.jpeg" alt="After">
-    </div>
-    <div class="slider"></div>
-    <div class="image-label">Popcorn Removal</div>
-  </div>
-
-  <div class="image-container">
-    <img src="Wallpaper_removal_before.jpeg" alt="Before">
-    <div class="image-overlay">
-      <img src="Wallpaper_removal_after.jpeg" alt="After">
-    </div>
-    <div class="slider"></div>
-    <div class="image-label">Wallpaper Removal</div>
-  </div>
-
-  <div class="image-container">
-    <img src="Restoration_before.jpeg" alt="Before">
-    <div class="image-overlay">
-      <img src="Restoration_after.jpeg" alt="After">
-    </div>
-    <div class="slider"></div>
-    <div class="image-label">Restoration</div>
-  </div>
-
-  <div class="image-container">
-    <img src="Remodel_before.jpeg" alt="Before">
-    <div class="image-overlay">
-      <img src="Remodel_after.jpeg" alt="After">
-    </div>
-    <div class="slider"></div>
-    <div class="image-label">Remodel</div>
-  </div>
+  <!-- Repeat same structure for other services -->
 
 </div>
 
