@@ -1,15 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>🕊️</title>
-  <link rel="stylesheet" href="home.css">
-</head>
-<body>  
-  <a><img src="wsa logo 1 transparent.png" width="600px"></a>
-    <br>
-  <br>
-TWIN CITIES PLASTER & DRYWALL SOLUTIONS
-<br>
-  <br>
-<title>Services</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twin Cities Plaster & Drywall Solutions</title>
+<link rel="stylesheet" href="home.css">
 
 <style>
 body {
@@ -20,151 +15,7 @@ body {
   text-align: center;
 }
 
-h2 {
-  margin-bottom: 30px;
-}
-
-/* Column layout */
-.image-column {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  max-width: 600px;
-  margin: 0 auto; /* centers the column */
-}
-
-/* Image container */
-.image-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* Images */
-.image-container img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* After image overlay */
-.image-after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-/* Hover effect */
-.image-container:hover .image-after {
-  opacity: 1;
-}
-
-/* Label styling */
-.image-label {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 14px;
-}
-</style>
-</head>
-
-<body>
-
-<h2>SERVICES</h2>
-
-<div class="image-column">
-
-  <div class="image-container">
-    <img src="Drywall_repair_before.jpeg" alt="Drywall repair before">
-    <img src="Drywall_repair_after.jpeg" alt="Drywall repair after" class="image-after">
-    <div class="image-label">Drywall Repair</div>
-  </div>
-
-  <div class="image-container">
-    <img src="Plaster_repair_before.jpeg" alt="Plaster repair before">
-    <img src="Plaster_repair_after.jpeg" alt="Plaster repair after" class="image-after">
-    <div class="image-label">Plaster Repair</div>
-  </div>
-
-  <div class="image-container">
-    <img src="Popcorn_removal_before.jpeg" alt="Popcorn removal before">
-    <img src="Popcorn_removal_after.jpeg" alt="Popcorn removal after" class="image-after">
-    <div class="image-label">Popcorn Removal</div>
-  </div>
-
-  <div class="image-container">
-    <img src="Wallpaper_removal_before.jpeg" alt="Wallpaper removal before">
-    <img src="Wallpaper_removal_after.jpeg" alt="Wallpaper removal after" class="image-after">
-    <div class="image-label">Wallpaper Removal</div>
-  </div>
-
-  <div class="image-container">
-    <img src="Restoration_before.jpeg" alt="Restoration before">
-    <img src="Restoration_after.jpeg" alt="Restoration after" class="image-after">
-    <div class="image-label">Restoration</div>
-  </div>
-
-  <div class="image-container">
-    <img src="Remodel_before.jpeg" alt="Remodel before">
-    <img src="Remodel_after.jpeg" alt="Remodel after" class="image-after">
-    <div class="image-label">Remodel</div>
-  </div>
-
-</div>
-
-</body>
-</html>
-
-If you'd like, I can also show you how to:
-
-Make it side-by-side (2 or 3 per row)
-
-Add a sliding before/after effect instead of fade
-
-Make it tap-to-reveal for mobile
-
-Add animation on scroll
-
-Turn it into a portfolio grid layout
-
-Just tell me what style you're going for.
-
-stack the images two to a row now
-
-Perfect 👍 You just need to switch from a single-column flex layout to a responsive grid with two columns.
-
-Here’s your updated version with 2 images per row (and still responsive on mobile):
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services</title>
-
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 40px 20px;
-  background: #f5f5f5;
-  text-align: center;
-}
-
-h2 {
-  margin-bottom: 30px;
-}
-
-/* Grid layout: 2 per row */
+/* ===== GRID LAYOUT ===== */
 .image-column {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -173,19 +24,20 @@ h2 {
   margin: 0 auto;
 }
 
-/* Make it 1 per row on small screens */
 @media (max-width: 768px) {
   .image-column {
     grid-template-columns: 1fr;
   }
 }
 
+/* ===== IMAGE CONTAINER ===== */
 .image-container {
   position: relative;
   width: 100%;
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: ew-resize;
 }
 
 .image-container img {
@@ -194,18 +46,45 @@ h2 {
   height: auto;
 }
 
-.image-after {
+/* ===== OVERLAY (AFTER IMAGE) ===== */
+.image-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
 }
 
-.image-container:hover .image-after {
-  opacity: 1;
+.image-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
+/* ===== SLIDER BAR ===== */
+.slider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: white;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -7px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+/* ===== LABEL ===== */
 .image-label {
   position: absolute;
   bottom: 10px;
@@ -215,57 +94,117 @@ h2 {
   padding: 6px 12px;
   border-radius: 4px;
   font-size: 14px;
+  z-index: 2;
 }
 </style>
 </head>
 
 <body>
 
+<img src="wsa logo 1 transparent.png" width="600" alt="Company Logo">
+<br><br>
+TWIN CITIES PLASTER & DRYWALL SOLUTIONS
+<br><br>
+
 <h2>SERVICES</h2>
 
 <div class="image-column">
 
   <div class="image-container">
-    <img src="Drywall_repair_before.jpeg" alt="Drywall repair before">
-    <img src="Drywall_repair_after.jpeg" alt="Drywall repair after" class="image-after">
+    <img src="Drywall_repair_before.jpeg" alt="Before">
+    <div class="image-overlay">
+      <img src="Drywall_repair_after.jpeg" alt="After">
+    </div>
+    <div class="slider"></div>
     <div class="image-label">Drywall Repair</div>
   </div>
 
   <div class="image-container">
-    <img src="Plaster_repair_before.jpeg" alt="Plaster repair before">
-    <img src="Plaster_repair_after.jpeg" alt="Plaster repair after" class="image-after">
+    <img src="Plaster_repair_before.jpeg" alt="Before">
+    <div class="image-overlay">
+      <img src="Plaster_repair_after.jpeg" alt="After">
+    </div>
+    <div class="slider"></div>
     <div class="image-label">Plaster Repair</div>
   </div>
 
   <div class="image-container">
-    <img src="Popcorn_removal_before.jpeg" alt="Popcorn removal before">
-    <img src="Popcorn_removal_after.jpeg" alt="Popcorn removal after" class="image-after">
+    <img src="Popcorn_removal_before.jpeg" alt="Before">
+    <div class="image-overlay">
+      <img src="Popcorn_removal_after.jpeg" alt="After">
+    </div>
+    <div class="slider"></div>
     <div class="image-label">Popcorn Removal</div>
   </div>
 
   <div class="image-container">
-    <img src="Wallpaper_removal_before.jpeg" alt="Wallpaper removal before">
-    <img src="Wallpaper_removal_after.jpeg" alt="Wallpaper removal after" class="image-after">
+    <img src="Wallpaper_removal_before.jpeg" alt="Before">
+    <div class="image-overlay">
+      <img src="Wallpaper_removal_after.jpeg" alt="After">
+    </div>
+    <div class="slider"></div>
     <div class="image-label">Wallpaper Removal</div>
   </div>
 
   <div class="image-container">
-    <img src="Restoration_before.jpeg" alt="Restoration before">
-    <img src="Restoration_after.jpeg" alt="Restoration after" class="image-after">
+    <img src="Restoration_before.jpeg" alt="Before">
+    <div class="image-overlay">
+      <img src="Restoration_after.jpeg" alt="After">
+    </div>
+    <div class="slider"></div>
     <div class="image-label">Restoration</div>
   </div>
 
   <div class="image-container">
-    <img src="Remodel_before.jpeg" alt="Remodel before">
-    <img src="Remodel_after.jpeg" alt="Remodel after" class="image-after">
+    <img src="Remodel_before.jpeg" alt="Before">
+    <div class="image-overlay">
+      <img src="Remodel_after.jpeg" alt="After">
+    </div>
+    <div class="slider"></div>
     <div class="image-label">Remodel</div>
   </div>
 
 </div>
-  <br>
-  <br>
-<a link href="contact.html">Contact</a>
-  </p>
-</body>
+
+<br><br>
+<a href="contact.html">Contact</a>
+
+<script>
+document.querySelectorAll('.image-container').forEach(container => {
+  const overlay = container.querySelector('.image-overlay');
+  const slider = container.querySelector('.slider');
+
+  let isDragging = false;
+
+  const moveSlider = (x) => {
+    const rect = container.getBoundingClientRect();
+    let position = x - rect.left;
+    position = Math.max(0, Math.min(position, rect.width));
+
+    overlay.style.width = position + "px";
+    slider.style.left = position + "px";
+  };
+
+  const startDrag = () => isDragging = true;
+  const stopDrag = () => isDragging = false;
+
+  container.addEventListener('mousedown', startDrag);
+  container.addEventListener('touchstart', startDrag);
+
+  window.addEventListener('mouseup', stopDrag);
+  window.addEventListener('touchend', stopDrag);
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    moveSlider(e.clientX);
+  });
+
+  window.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    moveSlider(e.touches[0].clientX);
+  });
+});
+</script>
+
 </body>
 </html>
