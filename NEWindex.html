@@ -1,0 +1,92 @@
+<head>
+  <title>🕊️</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>  
+  <a><img src="wsa logo 1 transparent.png" width="600px"></a>
+    <br>
+  <br>
+TWIN CITIES PLASTER & DRYWALL SOLUTIONS
+<br>
+  <br>
+<head>
+  <style>
+.image-column {
+  display: flex;
+  flex-direction: column; /* Stacks the images vertically */
+  gap: 20px; /* Adds space between image containers */
+  width: 600px; /* Adjust column width as desired */
+}
+
+.image-container {
+  position: relative; /* Crucial for positioning the overlay image */
+  width: 100%;
+  overflow: hidden; /* Ensures the images stay within the container bounds */
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image-after {
+  position: absolute; /* Positions the after image directly on top of the before image */
+  top: 0;
+  left: 0;
+  opacity: 0; /* Hides the after image by default */
+  transition: opacity 0.5s ease; /* Smooth transition for the overlay effect */
+}
+
+.image-container:hover .image-after {
+  opacity: 1; /* Makes the after image visible on hover over the container */
+}
+
+.image-label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 3px;
+  /* Add other styling for your label as needed */
+}
+</style>
+</head>
+<body>SERVICES:</body>
+<div class="image-column">
+  <div class="image-container">
+    <img src="Drywall_repair_before.jpeg" alt="Drywall repair before image" class="image-before">
+    <img src="Drywall_repair_after.jpeg" alt="After Image" class="image-after">
+    <div class="image-label">Drywall repair</div>
+  </div>
+  <div class="image-container">
+    <img src="Plaster_repair_before.jpeg" alt="Plaster repair before image" class="image-before">
+    <img src="Plaster_repair_after.jpeg" alt="Plaster repair after image" class="image-after">
+    <div class="image-label">Plaster repair</div>
+  </div>
+  <div class="image-container">
+    <img src="Popcorn_removal_before.jpeg" alt="Popcorn removal before image" class="image-before">
+    <img src="Popcorn_removal_after.jpeg" alt="Popcorn removal after image" class="image-after">
+    <div class="image-label">Popcorn removal</div>
+  </div>
+  <div class="image-container">
+    <img src="Wallpaper_removal_before.jpeg" alt="Wallpaper removal before image" class="image-before">
+    <img src="Wallpaper_removal_after.jpeg" alt="Wallpaper removal after image" class="image-after">
+    <div class="image-label">Wallpaper removal</div>
+    </div>
+      <div class="image-container">
+    <img src="Restoration_before.jpeg" alt="Restoration before image" class="image-before">
+    <img src="Restoration_after.jpeg" alt="Restoration after image" class="image-after">
+    <div class="image-label">Restoration</div>
+    </div>
+      <div class="image-container">
+    <img src="Remodel_before.jpeg" alt="Remodel before image" class="image-before">
+    <img src="Remodel_after.jpeg" alt="Remodel after image" class="image-after">
+    <div class="image-label">Remodel</div>
+  </div>
+</div>
+    
+</body>
+</html>
