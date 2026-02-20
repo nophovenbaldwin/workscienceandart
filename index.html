@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Twin Cities Plaster & Drywall Solutions</title>
-<link rel="stylesheet" href="home.css">
-
 <style>
 body {
   font-family: Baskerville, serif;
@@ -41,7 +39,7 @@ body {
 .image-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;   /* consistent box shape */
+  aspect-ratio: 16 / 9;   /* fixed shape for all images */
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -76,6 +74,7 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
 /* ===== SLIDER ===== */
 .slider {
   position: absolute;
@@ -221,21 +220,24 @@ document.querySelectorAll('.image-container').forEach(container => {
   const beforeText = container.querySelector('.before-text');
   const afterText = container.querySelector('.after-text');
 
+  // Start slider in the center
+  overlay.style.width = container.offsetWidth / 2 + 'px';
+  slider.style.left = container.offsetWidth / 2 + 'px';
+
   let isDragging = false;
 
   const moveSlider = (x) => {
     const rect = container.getBoundingClientRect();
     let position = x - rect.left;
-    position = Math.max(0, Math.min(position, rect.width));
+    position = Math.max(0, Math.min(position, rect.width)); // clamp
 
     const percentage = position / rect.width;
 
-    overlay.style.width = position + "px";
-    slider.style.left = position + "px";
+    overlay.style.width = `${position}px`;
+    slider.style.left = `${position}px`;
 
-    /* Fade logic */
-    beforeText.style.opacity = 1 - percentage * 1.5;
-    afterText.style.opacity = percentage * 1.5;
+    beforeText.style.opacity = Math.max(0, Math.min(1, 1 - percentage));
+    afterText.style.opacity = Math.max(0, Math.min(1, percentage));
   };
 
   const startDrag = () => isDragging = true;
