@@ -11,6 +11,7 @@ body {
   padding: 40px 20px;
   background: #f5f5f5;
   text-align: center;
+  cursor: url("dove.png") 30 16, auto;
 }
 
   h1 {
@@ -80,6 +81,12 @@ p {
   cursor: url("dove.png"), auto;
 }
 
+  .image-container:hover {
+     transform: scale(1.02);
+  transition: transform 0.3s ease;
+  cursor: url("dove-hover.png") 30 16, pointer;
+}
+  
 .image-container > img {
   width: 100%;
   height: auto;
