@@ -53,7 +53,7 @@ body {
   height: auto;
 }
 
-/* ===== OVERLAY (AFTER IMAGE) ===== */
+/* ===== OVERLAY ===== */
 .image-overlay {
   position: absolute;
   top: 0;
@@ -69,7 +69,7 @@ body {
   object-fit: cover;
 }
 
-/* ===== SLIDER BAR ===== */
+/* ===== SLIDER ===== */
 .slider {
   position: absolute;
   top: 0;
@@ -104,15 +104,11 @@ body {
   padding: 4px 8px;
   border-radius: 3px;
   z-index: 2;
+  transition: opacity 0.3s ease;
 }
 
-.before-text {
-  left: 10px;
-}
-
-.after-text {
-  right: 10px;
-}
+.before-text { left: 10px; }
+.after-text { right: 10px; }
 
 /* ===== SERVICE LABEL ===== */
 .image-label {
@@ -151,7 +147,60 @@ TWIN CITIES PLASTER & DRYWALL SOLUTIONS
     <div class="image-label">Drywall Repair</div>
   </div>
 
-  <!-- Repeat same structure for other services -->
+  <div class="image-container">
+    <img src="Plaster_repair_before.jpeg" alt="Before">
+    <div class="image-overlay">
+      <img src="Plaster_repair_after.jpeg" alt="After">
+    </div>
+    <div class="slider"></div>
+    <div class="before-text">Before</div>
+    <div class="after-text">After</div>
+    <div class="image-label">Plaster Repair</div>
+  </div>
+
+  <div class="image-container">
+    <img src="Popcorn_removal_before.jpeg" alt="Before">
+    <div class="image-overlay">
+      <img src="Popcorn_removal_after.jpeg" alt="After">
+    </div>
+    <div class="slider"></div>
+    <div class="before-text">Before</div>
+    <div class="after-text">After</div>
+    <div class="image-label">Popcorn removal</div>
+  </div>
+
+  <div class="image-container">
+    <img src="Wallpaper_removal_before.jpeg" alt="Before">
+    <div class="image-overlay">
+      <img src="Wallpaper_removal_after.jpeg" alt="After">
+    </div>
+    <div class="slider"></div>
+    <div class="before-text">Before</div>
+    <div class="after-text">After</div>
+    <div class="image-label">Wallpaper removal</div>
+  </div>
+
+  <div class="image-container">
+    <img src=Restoration_before.jpeg" alt="Before">
+    <div class="image-overlay">
+      <img src="Restoration_after.jpeg" alt="After">
+    </div>
+    <div class="slider"></div>
+    <div class="before-text">Before</div>
+    <div class="after-text">After</div>
+    <div class="image-label">Restoration</div>
+  </div>
+
+  <div class="image-container">
+    <img src="Remodel_before.jpeg" alt="Before">
+    <div class="image-overlay">
+      <img src="Remodel_after.jpeg" alt="After">
+    </div>
+    <div class="slider"></div>
+    <div class="before-text">Before</div>
+    <div class="after-text">After</div>
+    <div class="image-label">Remodel</div>
+  </div>
 
 </div>
 
@@ -162,6 +211,8 @@ TWIN CITIES PLASTER & DRYWALL SOLUTIONS
 document.querySelectorAll('.image-container').forEach(container => {
   const overlay = container.querySelector('.image-overlay');
   const slider = container.querySelector('.slider');
+  const beforeText = container.querySelector('.before-text');
+  const afterText = container.querySelector('.after-text');
 
   let isDragging = false;
 
@@ -170,8 +221,14 @@ document.querySelectorAll('.image-container').forEach(container => {
     let position = x - rect.left;
     position = Math.max(0, Math.min(position, rect.width));
 
+    const percentage = position / rect.width;
+
     overlay.style.width = position + "px";
     slider.style.left = position + "px";
+
+    /* Fade logic */
+    beforeText.style.opacity = 1 - percentage * 1.5;
+    afterText.style.opacity = percentage * 1.5;
   };
 
   const startDrag = () => isDragging = true;
