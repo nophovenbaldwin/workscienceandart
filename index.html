@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Twin Cities Plaster & Drywall Solutions</title>
+<title>🕊️</title>
 <style>
 body {
   font-family: Baskerville, serif;
@@ -15,7 +15,7 @@ body {
 
 /* ===== RESPONSIVE LOGO ===== */
 .logo {
-  max-width: 425px;
+  max-width: 600px;
   width: 100%;
   height: auto;
 }
@@ -26,7 +26,7 @@ body {
   flex-direction: column;
   align-items: center;      /* center the column */
   gap: 30px;
-  max-width: 600px;         /* optional max width for large screens */
+  max-width: 600px;         /* optional max width */
   margin: 0 auto;
 }
 
@@ -37,7 +37,7 @@ body {
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  cursor: pointer;
+  cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><text y='32' font-size='32'>🕊️</text></svg>") 16 16, auto;
 }
 
 /* Main 'before' image */
@@ -71,10 +71,10 @@ body {
   opacity: 1;
 }
 
-/* ===== SERVICE LABEL ===== */
+/* ===== SERVICE LABEL TOP LEFT ===== */
 .image-label {
   position: absolute;
-  bottom: 10px;
+  top: 10px;             /* top left now */
   left: 10px;
   color: white;
   background-color: rgba(0, 0, 0, 0.7);
@@ -93,7 +93,7 @@ body {
 TWIN CITIES PLASTER & DRYWALL SOLUTIONS
 <br><br>
 
-<h1>SERVICES</h1>
+<body>SERVICES</body>
 
 <div class="image-column">
 
@@ -129,6 +129,14 @@ TWIN CITIES PLASTER & DRYWALL SOLUTIONS
     <div class="image-label">Wallpaper removal</div>
   </div>
 
+  <div class="image-container">
+    <img src="Taping_before.png" alt="Before">
+    <div class="image-overlay">
+      <img src="Taping_after.jpeg" alt="After">
+    </div>
+    <div class="image-label">Drywall finishing</div>
+  </div>
+  
   <div class="image-container">
     <img src="Restoration_before.jpeg" alt="Before">
     <div class="image-overlay">
