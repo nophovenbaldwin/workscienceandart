@@ -42,16 +42,15 @@ body {
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  cursor: ew-resize;
+  cursor: pointer;
 }
 
 /* Main 'before' image */
 .image-container > img {
   width: 100%;
-  height: auto;        /* keep natural aspect ratio */
+  height: auto;
   display: block;
-  object-fit: cover;   /* ensures overlay matches */
-  position: relative;
+  object-fit: cover;
 }
 
 /* Overlay 'after' image */
@@ -59,60 +58,23 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;          /* initial slider position */
+  width: 100%;
   height: 100%;
-  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .image-overlay img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: block;
 }
 
-/* ===== SLIDER ===== */
-.slider {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 2px;
-  height: 100%;
-  background: white;
+/* Hover effect */
+.image-container:hover .image-overlay {
+  opacity: 1;
 }
-
-.slider::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -6px;
-  width: 14px;
-  height: 14px;
-  background: white;
-  border-radius: 50%;
-  transform: translateY(-50%);
-}
-
-/* ===== BEFORE / AFTER LABELS ===== */
-.before-text,
-.after-text {
-  position: absolute;
-  top: 10px;
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: white;
-  background: rgba(0,0,0,0.5);
-  padding: 4px 8px;
-  border-radius: 3px;
-  z-index: 2;
-  transition: opacity 0.3s ease;
-}
-
-.before-text { right: 10px; }
-.after-text { left: 10px; }
 
 /* ===== SERVICE LABEL ===== */
 .image-label {
@@ -145,9 +107,6 @@ TWIN CITIES PLASTER & DRYWALL SOLUTIONS
     <div class="image-overlay">
       <img src="Drywall_repair_after.jpeg" alt="After">
     </div>
-    <div class="slider"></div>
-    <div class="before-text">Before</div>
-    <div class="after-text">After</div>
     <div class="image-label">Drywall Repair</div>
   </div>
 
@@ -156,9 +115,6 @@ TWIN CITIES PLASTER & DRYWALL SOLUTIONS
     <div class="image-overlay">
       <img src="Plaster_repair_after.jpeg" alt="After">
     </div>
-    <div class="slider"></div>
-    <div class="before-text">Before</div>
-    <div class="after-text">After</div>
     <div class="image-label">Plaster Repair</div>
   </div>
 
@@ -167,9 +123,6 @@ TWIN CITIES PLASTER & DRYWALL SOLUTIONS
     <div class="image-overlay">
       <img src="Popcorn_removal_after.jpeg" alt="After">
     </div>
-    <div class="slider"></div>
-    <div class="before-text">Before</div>
-    <div class="after-text">After</div>
     <div class="image-label">Popcorn removal</div>
   </div>
 
@@ -178,9 +131,6 @@ TWIN CITIES PLASTER & DRYWALL SOLUTIONS
     <div class="image-overlay">
       <img src="Wallpaper_removal_after.jpeg" alt="After">
     </div>
-    <div class="slider"></div>
-    <div class="before-text">Before</div>
-    <div class="after-text">After</div>
     <div class="image-label">Wallpaper removal</div>
   </div>
 
@@ -189,9 +139,6 @@ TWIN CITIES PLASTER & DRYWALL SOLUTIONS
     <div class="image-overlay">
       <img src="Restoration_after.jpeg" alt="After">
     </div>
-    <div class="slider"></div>
-    <div class="before-text">Before</div>
-    <div class="after-text">After</div>
     <div class="image-label">Restoration</div>
   </div>
 
@@ -200,9 +147,6 @@ TWIN CITIES PLASTER & DRYWALL SOLUTIONS
     <div class="image-overlay">
       <img src="Remodel_after.jpeg" alt="After">
     </div>
-    <div class="slider"></div>
-    <div class="before-text">Before</div>
-    <div class="after-text">After</div>
     <div class="image-label">Remodel</div>
   </div>
 
@@ -210,54 +154,6 @@ TWIN CITIES PLASTER & DRYWALL SOLUTIONS
 
 <br><br>
 <a href="contact.html">Contact</a>
-
-<script>
-document.querySelectorAll('.image-container').forEach(container => {
-  const overlay = container.querySelector('.image-overlay');
-  const slider = container.querySelector('.slider');
-  const beforeText = container.querySelector('.before-text');
-  const afterText = container.querySelector('.after-text');
-
-  // Start slider in the center
-  overlay.style.width = container.offsetWidth / 2 + 'px';
-  slider.style.left = container.offsetWidth / 2 + 'px';
-
-  let isDragging = false;
-
-  const moveSlider = (x) => {
-    const rect = container.getBoundingClientRect();
-    let position = x - rect.left;
-    position = Math.max(0, Math.min(position, rect.width)); // clamp
-
-    const percentage = position / rect.width;
-
-    overlay.style.width = `${position}px`;
-    slider.style.left = `${position}px`;
-
-    beforeText.style.opacity = Math.max(0, Math.min(1, 1 - percentage));
-    afterText.style.opacity = Math.max(0, Math.min(1, percentage));
-  };
-
-  const startDrag = () => isDragging = true;
-  const stopDrag = () => isDragging = false;
-
-  container.addEventListener('mousedown', startDrag);
-  container.addEventListener('touchstart', startDrag);
-
-  window.addEventListener('mouseup', stopDrag);
-  window.addEventListener('touchend', stopDrag);
-
-  window.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    moveSlider(e.clientX);
-  });
-
-  window.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-    moveSlider(e.touches[0].clientX);
-  });
-});
-</script>
 
 </body>
 </html>
