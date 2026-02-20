@@ -9,19 +9,183 @@
 TWIN CITIES PLASTER & DRYWALL SOLUTIONS
 <br>
   <br>
-<head>
-  <style>
+<title>Services</title>
+
+<style>
+body {
+  font-family: Baskerville, serif;
+  margin: 0;
+  padding: 40px 20px;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+/* Column layout */
 .image-column {
   display: flex;
-  flex-direction: column; /* Stacks the images vertically */
-  gap: 20px; /* Adds space between image containers */
-  width: 600px; /* Adjust column width as desired */
+  flex-direction: column;
+  gap: 30px;
+  max-width: 600px;
+  margin: 0 auto; /* centers the column */
+}
+
+/* Image container */
+.image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Images */
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* After image overlay */
+.image-after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Hover effect */
+.image-container:hover .image-after {
+  opacity: 1;
+}
+
+/* Label styling */
+.image-label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>SERVICES</h2>
+
+<div class="image-column">
+
+  <div class="image-container">
+    <img src="Drywall_repair_before.jpeg" alt="Drywall repair before">
+    <img src="Drywall_repair_after.jpeg" alt="Drywall repair after" class="image-after">
+    <div class="image-label">Drywall Repair</div>
+  </div>
+
+  <div class="image-container">
+    <img src="Plaster_repair_before.jpeg" alt="Plaster repair before">
+    <img src="Plaster_repair_after.jpeg" alt="Plaster repair after" class="image-after">
+    <div class="image-label">Plaster Repair</div>
+  </div>
+
+  <div class="image-container">
+    <img src="Popcorn_removal_before.jpeg" alt="Popcorn removal before">
+    <img src="Popcorn_removal_after.jpeg" alt="Popcorn removal after" class="image-after">
+    <div class="image-label">Popcorn Removal</div>
+  </div>
+
+  <div class="image-container">
+    <img src="Wallpaper_removal_before.jpeg" alt="Wallpaper removal before">
+    <img src="Wallpaper_removal_after.jpeg" alt="Wallpaper removal after" class="image-after">
+    <div class="image-label">Wallpaper Removal</div>
+  </div>
+
+  <div class="image-container">
+    <img src="Restoration_before.jpeg" alt="Restoration before">
+    <img src="Restoration_after.jpeg" alt="Restoration after" class="image-after">
+    <div class="image-label">Restoration</div>
+  </div>
+
+  <div class="image-container">
+    <img src="Remodel_before.jpeg" alt="Remodel before">
+    <img src="Remodel_after.jpeg" alt="Remodel after" class="image-after">
+    <div class="image-label">Remodel</div>
+  </div>
+
+</div>
+
+</body>
+</html>
+
+If you'd like, I can also show you how to:
+
+Make it side-by-side (2 or 3 per row)
+
+Add a sliding before/after effect instead of fade
+
+Make it tap-to-reveal for mobile
+
+Add animation on scroll
+
+Turn it into a portfolio grid layout
+
+Just tell me what style you're going for.
+
+stack the images two to a row now
+
+Perfect 👍 You just need to switch from a single-column flex layout to a responsive grid with two columns.
+
+Here’s your updated version with 2 images per row (and still responsive on mobile):
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 40px 20px;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+/* Grid layout: 2 per row */
+.image-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Make it 1 per row on small screens */
+@media (max-width: 768px) {
+  .image-column {
+    grid-template-columns: 1fr;
+  }
 }
 
 .image-container {
-  position: relative; /* Crucial for positioning the overlay image */
+  position: relative;
   width: 100%;
-  overflow: hidden; /* Ensures the images stay within the container bounds */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .image-container img {
@@ -31,15 +195,15 @@ TWIN CITIES PLASTER & DRYWALL SOLUTIONS
 }
 
 .image-after {
-  position: absolute; /* Positions the after image directly on top of the before image */
+  position: absolute;
   top: 0;
   left: 0;
-  opacity: 0; /* Hides the after image by default */
-  transition: opacity 0.5s ease; /* Smooth transition for the overlay effect */
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .image-container:hover .image-after {
-  opacity: 1; /* Makes the after image visible on hover over the container */
+  opacity: 1;
 }
 
 .image-label {
@@ -48,44 +212,55 @@ TWIN CITIES PLASTER & DRYWALL SOLUTIONS
   left: 10px;
   color: white;
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 5px 10px;
-  border-radius: 3px;
-  /* Add other styling for your label as needed */
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
 }
 </style>
 </head>
-<body>SERVICES:</body>
+
+<body>
+
+<h2>SERVICES</h2>
+
 <div class="image-column">
+
   <div class="image-container">
-    <img src="Drywall_repair_before.jpeg" alt="Drywall repair before image" class="image-before">
-    <img src="Drywall_repair_after.jpeg" alt="After Image" class="image-after">
-    <div class="image-label">Drywall repair</div>
+    <img src="Drywall_repair_before.jpeg" alt="Drywall repair before">
+    <img src="Drywall_repair_after.jpeg" alt="Drywall repair after" class="image-after">
+    <div class="image-label">Drywall Repair</div>
   </div>
+
   <div class="image-container">
-    <img src="Plaster_repair_before.jpeg" alt="Plaster repair before image" class="image-before">
-    <img src="Plaster_repair_after.jpeg" alt="Plaster repair after image" class="image-after">
-    <div class="image-label">Plaster repair</div>
+    <img src="Plaster_repair_before.jpeg" alt="Plaster repair before">
+    <img src="Plaster_repair_after.jpeg" alt="Plaster repair after" class="image-after">
+    <div class="image-label">Plaster Repair</div>
   </div>
+
   <div class="image-container">
-    <img src="Popcorn_removal_before.jpeg" alt="Popcorn removal before image" class="image-before">
-    <img src="Popcorn_removal_after.jpeg" alt="Popcorn removal after image" class="image-after">
-    <div class="image-label">Popcorn removal</div>
+    <img src="Popcorn_removal_before.jpeg" alt="Popcorn removal before">
+    <img src="Popcorn_removal_after.jpeg" alt="Popcorn removal after" class="image-after">
+    <div class="image-label">Popcorn Removal</div>
   </div>
+
   <div class="image-container">
-    <img src="Wallpaper_removal_before.jpeg" alt="Wallpaper removal before image" class="image-before">
-    <img src="Wallpaper_removal_after.jpeg" alt="Wallpaper removal after image" class="image-after">
-    <div class="image-label">Wallpaper removal</div>
-    </div>
-      <div class="image-container">
-    <img src="Restoration_before.jpeg" alt="Restoration before image" class="image-before">
-    <img src="Restoration_after.jpeg" alt="Restoration after image" class="image-after">
+    <img src="Wallpaper_removal_before.jpeg" alt="Wallpaper removal before">
+    <img src="Wallpaper_removal_after.jpeg" alt="Wallpaper removal after" class="image-after">
+    <div class="image-label">Wallpaper Removal</div>
+  </div>
+
+  <div class="image-container">
+    <img src="Restoration_before.jpeg" alt="Restoration before">
+    <img src="Restoration_after.jpeg" alt="Restoration after" class="image-after">
     <div class="image-label">Restoration</div>
-    </div>
-      <div class="image-container">
-    <img src="Remodel_before.jpeg" alt="Remodel before image" class="image-before">
-    <img src="Remodel_after.jpeg" alt="Remodel after image" class="image-after">
+  </div>
+
+  <div class="image-container">
+    <img src="Remodel_before.jpeg" alt="Remodel before">
+    <img src="Remodel_after.jpeg" alt="Remodel after" class="image-after">
     <div class="image-label">Remodel</div>
   </div>
+
 </div>
   <br>
   <br>
