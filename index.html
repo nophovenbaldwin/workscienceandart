@@ -18,16 +18,33 @@ body {
   max-width: 600px;
   width: 100%;
   height: auto;
+  margin-bottom: 20px;
 }
 
-/* ===== CENTERED SINGLE COLUMN ===== */
+/* ===== CONTACT INFO ===== */
+.contact-info {
+  margin-bottom: 50px;
+  font-size: 18px;
+}
+
+.contact-info a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* ===== CENTERED SINGLE COLUMN FOR GALLERY ===== */
 .image-column {
   display: flex;
   flex-direction: column;
-  align-items: center;      /* center the column */
+  align-items: center;
   gap: 30px;
-  max-width: 600px;         /* optional max width */
-  margin: 0 auto;
+  max-width: 600px;
+  margin: 0 auto 50px auto;
 }
 
 /* ===== IMAGE CONTAINER ===== */
@@ -40,7 +57,6 @@ body {
   cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><text y='32' font-size='32'>🕊️</text></svg>") 16 16, auto;
 }
 
-/* Main 'before' image */
 .image-container > img {
   width: 100%;
   height: auto;
@@ -48,7 +64,6 @@ body {
   object-fit: cover;
 }
 
-/* Overlay 'after' image */
 .image-overlay {
   position: absolute;
   top: 0;
@@ -66,15 +81,13 @@ body {
   display: block;
 }
 
-/* Hover effect */
 .image-container:hover .image-overlay {
   opacity: 1;
 }
 
-/* ===== SERVICE LABEL TOP LEFT ===== */
 .image-label {
   position: absolute;
-  top: 10px;             /* top left now */
+  top: 10px;
   left: 10px;
   color: white;
   background-color: rgba(0, 0, 0, 0.7);
@@ -85,19 +98,34 @@ body {
 }
 </style>
 </head>
-
 <body>
 
+<!-- LOGO AND TITLE -->
 <img src="wsa logo 1 transparent.png" class="logo" alt="Company Logo">
-<br><br>
-TWIN CITIES PLASTER & DRYWALL SOLUTIONS
-<br><br>
+<h1>Twin Cities Plaster & Drywall Solutions</h1>
 
-<body><u>Services</u></body>
-<br>
-  <br>
+<!-- ===== PROTECTED CONTACT INFO ===== -->
+<div class="contact-info">
+  <p>📞<span id="phone"></span></p>
+  <p>📧<span id="email"></span></p>
+</div>
+
+<script>
+const phoneParts = ["651", "447", "9060"];
+const phoneText = "(" + phoneParts[0] + ") " + phoneParts[1] + "-" + phoneParts[2];
+const phoneLink = "tel:" + phoneParts.join("");
+document.getElementById("phone").innerHTML = "<a href='" + phoneLink + "'>" + phoneText + "</a>";
+
+// Protect email from bots
+const user = "noah";
+const domain = "workscience.art";
+const email = user + "@" + domain;
+document.getElementById("email").innerHTML = "<a href='mailto:" + email + "'>" + email + "</a>";
+</script>
+
+<!-- ===== SERVICES GALLERY ===== -->
+<h1>Our Services</h1>
 <div class="image-column">
-
   <div class="image-container">
     <img src="Drywall_repair_before.jpeg" alt="Before">
     <div class="image-overlay">
@@ -131,14 +159,6 @@ TWIN CITIES PLASTER & DRYWALL SOLUTIONS
   </div>
 
   <div class="image-container">
-    <img src="Taping_before.png" alt="Before">
-    <div class="image-overlay">
-      <img src="Taping_after.jpeg" alt="After">
-    </div>
-    <div class="image-label">Drywall finishing</div>
-  </div>
-  
-  <div class="image-container">
     <img src="Restoration_before.jpeg" alt="Before">
     <div class="image-overlay">
       <img src="Restoration_after.jpeg" alt="After">
@@ -153,11 +173,7 @@ TWIN CITIES PLASTER & DRYWALL SOLUTIONS
     </div>
     <div class="image-label">Remodel</div>
   </div>
-
 </div>
-
-<br><br>
-<a href="contact.html">Contact</a>
 
 </body>
 </html>
