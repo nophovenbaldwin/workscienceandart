@@ -102,12 +102,13 @@ body {
 
 <!-- LOGO AND TITLE -->
 <img src="wsa logo 1 transparent.png" class="logo" alt="Company Logo">
-<h1>Twin Cities Plaster & Drywall Solutions</h1>
+<h2>TWIN CITIES PLASTER & DRYWALL SOLUTIONS</h2>
 
 <!-- ===== PROTECTED CONTACT INFO ===== -->
 <div class="contact-info">
-  <p>📞<span id="phone"></span></p>
-  <p>📧<span id="email"></span></p>
+  <p>📞: <span id="phone"></span></p>
+  <p>💬: <span id="text"></span></p>
+  <p>📧: <span id="email"></span></p>
 </div>
 
 <script>
@@ -116,15 +117,16 @@ const phoneText = "(" + phoneParts[0] + ") " + phoneParts[1] + "-" + phoneParts[
 const phoneLink = "tel:" + phoneParts.join("");
 document.getElementById("phone").innerHTML = "<a href='" + phoneLink + "'>" + phoneText + "</a>";
 
-// Protect email from bots
+const smsLink = "sms:" + phoneParts.join("");
+document.getElementById("text").innerHTML = "<a href='" + smsLink + "'>" + phoneText + "</a>";
+
 const user = "noah";
 const domain = "workscience.art";
 const email = user + "@" + domain;
 document.getElementById("email").innerHTML = "<a href='mailto:" + email + "'>" + email + "</a>";
 </script>
 
-<!-- ===== SERVICES GALLERY ===== -->
-<h1>Our Services</h1>
+<h2>Services</h2>
 <div class="image-column">
   <div class="image-container">
     <img src="Drywall_repair_before.jpeg" alt="Before">
