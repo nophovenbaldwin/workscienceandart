@@ -39,7 +39,6 @@ body {
 .image-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;   /* fixed shape for all images */
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -48,12 +47,11 @@ body {
 
 /* Main 'before' image */
 .image-container > img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;        /* keep natural aspect ratio */
+  display: block;
+  object-fit: cover;   /* ensures overlay matches */
+  position: relative;
 }
 
 /* Overlay 'after' image */
@@ -61,18 +59,18 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;   /* initial slider position */
+  width: 50%;          /* initial slider position */
   height: 100%;
   overflow: hidden;
 }
 
 .image-overlay img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /* ===== SLIDER ===== */
