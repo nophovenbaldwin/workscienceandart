@@ -123,12 +123,20 @@ a:active {
 /* IMAGE GALLERY */
 
 .image-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-  max-width: 408px;
+  max-width: 850px;
   margin: 0 auto 50px auto;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: url("dove.png") 16 16, auto;
 }
 
 .image-container {
@@ -198,5 +206,12 @@ a:active {
     width: 100%;
     max-width: 280px;
     flex: none;
+  }
+}
+
+(max-width: 650px) {
+  .image-column {
+    grid-template-columns: 1fr;
+    max-width: 408px;
   }
 }
