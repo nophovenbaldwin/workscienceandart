@@ -62,12 +62,15 @@ p {
 }
 
 .about-portrait {
-  flex: 0 0 32%;
+  flex: 0 0 280px;
+  width: 280px;
+  max-width: 100%;
 }
 
 .about-portrait img {
   display: block;
   width: 100%;
+  max-width: 280px;
   height: auto;
   object-fit: cover;
 }
@@ -193,6 +196,7 @@ a:active {
 
   .about-portrait {
     width: 100%;
-    max-width: 350px;
+    max-width: 280px;
+    flex: none;
   }
 }
