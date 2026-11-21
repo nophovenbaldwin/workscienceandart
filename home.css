@@ -1,21 +1,26 @@
+
+/* GENERAL PAGE STYLING */
+
 body {
   font-family: Baskerville, serif;
   margin: 0;
   padding: 40px 20px;
-  background: #f5f5f5;
+  background: #b1e697;
   text-align: center;
   cursor: url("/dove.png") 64 64, auto;
 }
 
-  h1 {
+/* HEADINGS */
+
+h1 {
   font-family: 'Baskerville', serif;
-  font-size: 32px;       
-  font-weight: normal;   
-  line-height: 1.2;     
-  color: #000000;        
+  font-size: 32px;
+  font-weight: normal;
+  line-height: 1.2;
+  color: #000000;
   margin-bottom: 0.5em;
 }
-  
+
 h2 {
   font-family: 'Baskerville', serif;
   font-size: 24px;
@@ -25,14 +30,18 @@ h2 {
   margin-bottom: 0.5em;
 }
 
+/* PARAGRAPHS */
+
 p {
   font-family: 'Baskerville', serif;
-  font-size: 16px;       
+  font-size: 16px;
   font-weight: normal;
   line-height: 1.6;
   color: #222222;
   margin-bottom: 1em;
 }
+
+/* LOGO */
 
 .logo {
   max-width: 600px;
@@ -40,6 +49,40 @@ p {
   height: auto;
   margin-bottom: 20px;
 }
+
+/* ABOUT SECTION: PORTRAIT AND TEXT */
+
+.about-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 35px;
+  max-width: 1000px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+.about-portrait {
+  flex: 0 0 32%;
+}
+
+.about-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.about-text p {
+  margin: 0 0 18px 0;
+}
+
+/* CONTACT INFORMATION */
 
 .contact-info {
   margin-bottom: 50px;
@@ -55,6 +98,26 @@ p {
 .contact-info a:hover {
   text-decoration: underline;
 }
+
+/* LINKS */
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: white;
+}
+
+a:active {
+  color: white;
+}
+
+/* IMAGE GALLERY */
 
 .image-column {
   display: flex;
@@ -74,12 +137,12 @@ p {
   cursor: url("dove.png") 16 16, auto;
 }
 
-  .image-container:hover {
-     transform: scale(1.0);
+.image-container:hover {
+  transform: scale(1.0);
   transition: transform 0.3s ease;
   cursor: url("dove.png") 16 16, pointer;
 }
-  
+
 .image-container > img {
   width: 100%;
   height: auto;
@@ -119,87 +182,8 @@ p {
   font-size: 14px;
   z-index: 2;
 }
-body {
-  background-color: #b1e697;
-;
-  font-family: "Baskerville", serif;
-}
 
-h1 {
-  font-family: 'Baskerville', serif;
-  font-size: 32px;        /* Larger but not oversized */
-  font-weight: normal;    /* Traditional serif styling */
-  line-height: 1.2;       /* Tight, old-school feel */
-  color: #000000;         /* Classic black text */
-  margin-bottom: 0.5em;   /* Slight space after heading */
-}
-
-h2 {
-  font-family: 'Baskerville', serif;
-  font-size: 24px;        /* Smaller than H1, clear hierarchy */
-  font-weight: normal;
-  line-height: 1.3;
-  color: #111111;
-  margin-bottom: 0.5em;
-}
-
-p {
-  font-family: 'Baskerville', serif;
-  font-size: 16px;        /* Standard readable size */
-  font-weight: normal;
-  line-height: 1.6;       /* Comfortable reading */
-  color: #222222;
-  margin-bottom: 1em;
-}
-
-/* unvisited link */
-a:link {
-  color: black;
-}
-
-/* visited link */
-a:visited {
-  color: black;
-}
-
-/* mouse over link */
-a:hover {
-  color: background-color: white;
-;
-}
-
-/* selected link */
-a:active {
-  color: white;
-
-  .about-section {
-  display: flex;
-  align-items: flex-start;
-  gap: 35px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.about-portrait {
-  flex: 0 0 32%;
-}
-
-.about-portrait img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.about-text {
-  flex: 1;
-  text-align: left;
-  line-height: 1.6;
-}
-
-.about-text p {
-  margin: 0 0 18px 0;
-}
+/* MOBILE LAYOUT */
 
 @media (max-width: 650px) {
   .about-section {
@@ -212,8 +196,3 @@ a:active {
     max-width: 350px;
   }
 }
-}
-
-<!--
- .tab { margin-left: 40px; }
--->
