@@ -52,45 +52,44 @@ p {
 
 /* ABOUT SECTION: PORTRAIT AND TEXT */
 
-.about-wrapper {
+.about-section {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-template-areas:
+    "portrait tagline"
+    "portrait text";
+  column-gap: 35px;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 30px auto;
+  align-items: start;
+  text-align: left;
 }
 
 .about-tagline {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.about-section {
-  display: flex;
-  align-items: flex-start;
-  gap: 35px;
+  grid-area: tagline;
+  margin: 0 0 20px;
   text-align: left;
 }
 
 .about-portrait {
-  flex: 0 0 280px;
-  width: 280px;
-  max-width: 100%;
+  grid-area: portrait;
+  width: 100%;
 }
 
 .about-portrait img {
   display: block;
   width: 100%;
-  max-width: 280px;
   height: auto;
-  object-fit: cover;
 }
 
 .about-text {
-  flex: 1;
+  grid-area: text;
   text-align: left;
   line-height: 1.6;
 }
 
 .about-text p {
-  margin: 0 0 18px 0;
+  margin: 0 0 18px;
 }
 
 /* CONTACT INFORMATION */
@@ -206,14 +205,16 @@ a:active {
 
 @media (max-width: 650px) {
   .about-section {
-    flex-direction: column;
-    gap: 20px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "tagline"
+      "portrait"
+      "text";
+    gap: 15px;
   }
 
   .about-portrait {
-    width: 100%;
     max-width: 280px;
-    flex: none;
   }
 }
 
