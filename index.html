@@ -40,27 +40,6 @@
 </div>
 
 <br>
-  <h2>Contact:</h2>
-<div class="contact-info">
-  <p>📞: <span id="phone"></span></p>
-  <p>💬: <span id="text"></span></p>
-  <p>📧: <span id="email"></span></p>
-</div>
-
-<script>
-const phoneParts = ["612", "424", "2484"];
-const phoneText = "(" + phoneParts[0] + ") " + phoneParts[1] + "-" + phoneParts[2];
-const phoneLink = "tel:" + phoneParts.join("");
-document.getElementById("phone").innerHTML = "<a href='" + phoneLink + "'>" + phoneText + "</a>";
-
-const smsLink = "sms:" + phoneParts.join("");
-document.getElementById("text").innerHTML = "<a href='" + smsLink + "'>" + phoneText + "</a>";
-
-const user = "noah";
-const domain = "workscience.art";
-const email = user + "@" + domain;
-document.getElementById("email").innerHTML = "<a href='mailto:" + email + "'>" + email + "</a>";
-</script>
 
 <h2>Services</h2>
 <div class="image-column">
@@ -95,31 +74,29 @@ document.getElementById("email").innerHTML = "<a href='mailto:" + email + "'>" +
     </div>
     <div class="image-label">Popcorn removal</div>
   </div>
-
-  <div class="image-container">
-    <img src="Wallpaper_removal_before.jpeg" alt="Before">
-    <div class="image-overlay">
-      <img src="Wallpaper_removal_after.jpeg" alt="After">
-    </div>
-    <div class="image-label">Wallpaper removal</div>
-  </div>
-
-  <div class="image-container">
-    <img src="Restoration_before.jpeg" alt="Before">
-    <div class="image-overlay">
-      <img src="Restoration_after.jpeg" alt="After">
-    </div>
-    <div class="image-label">Restoration</div>
-  </div>
-
-  <div class="image-container">
-    <img src="Remodel_before.jpeg" alt="Before">
-    <div class="image-overlay">
-      <img src="Remodel_after.jpeg" alt="After">
-    </div>
-    <div class="image-label">Remodel</div>
-  </div>
 </div>
+<br>
+   <h2>Contact</h2>
+<div class="contact-info">
+  <p>📞: <span id="phone"></span></p>
+  <p>💬: <span id="text"></span></p>
+  <p>📧: <span id="email"></span></p>
+</div>
+
+<script>
+const phoneParts = ["612", "424", "2484"];
+const phoneText = "(" + phoneParts[0] + ") " + phoneParts[1] + "-" + phoneParts[2];
+const phoneLink = "tel:" + phoneParts.join("");
+document.getElementById("phone").innerHTML = "<a href='" + phoneLink + "'>" + phoneText + "</a>";
+
+const smsLink = "sms:" + phoneParts.join("");
+document.getElementById("text").innerHTML = "<a href='" + smsLink + "'>" + phoneText + "</a>";
+
+const user = "noah";
+const domain = "workscience.art";
+const email = user + "@" + domain;
+document.getElementById("email").innerHTML = "<a href='mailto:" + email + "'>" + email + "</a>";
+</script>
 
 </body>
 </html>
