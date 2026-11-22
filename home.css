@@ -134,6 +134,33 @@ p {
   font-weight: normal;
 }
 
+.contact-section {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 20px;
+  max-width: 600px;
+  margin: 20px auto 50px;
+}
+
+.contact-portrait {
+  width: 120px !important;
+  flex: 0 0 120px !important;
+}
+
+.contact-portrait img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 0;
+  text-align: left !important;
+}
+
 /* LINKS */
 
 a:link {
