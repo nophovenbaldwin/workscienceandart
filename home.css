@@ -255,13 +255,3 @@ a:active {
     max-width: 408px;
   }
 }
-
-(max-width: 600px) {
-  .contact-section {
-    gap: 15px;
-  }
-
-  .contact-portrait {
-    width: 33%;
-  }
-}
