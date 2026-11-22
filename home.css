@@ -111,7 +111,6 @@ p {
 
 .contact-section {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 25px;
@@ -137,6 +136,7 @@ p {
 }
 
 .contact-info p {
+  margin: 12px 0;
   text-align: left;
 }
 
