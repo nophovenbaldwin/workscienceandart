@@ -109,17 +109,28 @@ p {
   text-decoration: underline;
 }
 
+.contact-section {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
 .contact-portrait {
   width: 33%;
   max-width: 180px;
-  margin: 20px auto;
+  flex-shrink: 0;
 }
 
 .contact-portrait img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 50%;
+}
+
+.contact-info {
+  flex: 1;
 }
 
 /* LINKS */
@@ -235,5 +246,15 @@ a:active {
   .image-column {
     grid-template-columns: 1fr;
     max-width: 408px;
+  }
+}
+
+(max-width: 600px) {
+  .contact-section {
+    gap: 15px;
+  }
+
+  .contact-portrait {
+    width: 33%;
   }
 }
